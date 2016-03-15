@@ -1,0 +1,58 @@
+/*!
+\file
+
+Copyright (c) 2010-2013 Johann A. Briffa
+
+This file is part of SimCommSys.
+
+SimCommSys is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+SimCommSys is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with SimCommSys.  If not, see <http://www.gnu.org/licenses/>.
+
+
+\mainpage SimCommSys Project
+\author   Johann A. Briffa
+
+
+\section intro Introduction
+
+The SimCommSys project consists of a set of C++ libraries for simulating
+communication systems using a distributed Monte Carlo simulator.
+Of principal interest is the error-control coding component, where various
+kinds of binary and non-binary codes are implemented, including turbo, LDPC,
+repeat-accumulate, and Reed-Solomon.
+This project also contains a number of executables implementing various
+stages of the communication system (such as the encoder, decoder, and a
+complete simulator) and a system benchmark.
+Finally, a number of shell and python scripts are provided to encapsulate
+routine use cases.
+
+
+\section classes Principal Classes
+
+Please consult the Wiki for an overview of the SimCommSys architecture.
+To help you navigate this API documentation, the most important classes in
+this project are:
+- libcomm::montecarlo, which implements a distributed Monte Carlo simulator.
+   The simulator automatically detects convergence and terminates according
+   to the required confidence and tolerance level.
+- libcomm::commsys_simulator, which implements a libcomm::experiment as
+   required by libcomm::montecarlo for simulating the performance of a
+   complete communication system.
+- libcomm::commsys, which defines a complete block-based communication
+   system, including:
+   - libcomm::codec, the error-control codec
+   - libcomm::mapper, a symbol-mapping between the codec and modulator
+   - libcomm::blockmodem, the modulation scheme
+   - libcomm::channel, a model for the communications channel
+
+*/
